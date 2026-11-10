@@ -1,0 +1,266 @@
+
+/* =========================================
+   VASANTHI BRIDAL MAKEOVER
+   SERVICES SECTION
+========================================= */
+
+
+/* =========================================
+   SERVICES GRID
+========================================= */
+
+.services {
+    background: var(--white);
+}
+
+
+.services-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 22px;
+}
+
+
+/* =========================================
+   SERVICE CARD
+========================================= */
+
+.service-card {
+    position: relative;
+
+    overflow: hidden;
+
+    min-height: 450px;
+
+    border-radius: 22px;
+
+    background: var(--dark);
+
+    box-shadow: 0 12px 30px rgba(36, 25, 27, 0.10);
+
+    isolation: isolate;
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+
+.service-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow: 0 20px 45px rgba(36, 25, 27, 0.18);
+}
+
+
+/* =========================================
+   SERVICE IMAGE
+========================================= */
+
+.service-image {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: -2;
+
+    overflow: hidden;
+}
+
+
+.service-image::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(36, 25, 27, 0.95) 0%,
+            rgba(36, 25, 27, 0.52) 45%,
+            rgba(36, 25, 27, 0.05) 100%
+        );
+
+    z-index: 1;
+}
+
+
+.service-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.7s ease;
+}
+
+
+.service-card:hover .service-image img {
+    transform: scale(1.08);
+}
+
+
+/* =========================================
+   SERVICE CONTENT
+========================================= */
+
+.service-content {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    z-index: 2;
+
+    padding: 28px 24px;
+}
+
+
+/* =========================================
+   SERVICE ICON
+========================================= */
+
+.service-icon {
+    display: flex;
+
+    width: 48px;
+    height: 48px;
+
+    margin-bottom: 15px;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.13);
+
+    color: #ffffff;
+
+    font-size: 17px;
+
+    backdrop-filter: blur(8px);
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.service-card:hover .service-icon {
+    background: var(--white);
+
+    color: var(--primary);
+
+    transform: rotate(-8deg);
+}
+
+
+/* =========================================
+   SERVICE TITLE
+========================================= */
+
+.service-content h3 {
+    margin-bottom: 9px;
+
+    color: var(--white);
+
+    font-family: "DM Serif Display", serif;
+
+    font-size: 1.7rem;
+
+    font-weight: 400;
+
+    line-height: 1.2;
+}
+
+
+/* =========================================
+   SERVICE DESCRIPTION
+========================================= */
+
+.service-content p {
+    color: rgba(255, 255, 255, 0.78);
+
+    font-size: 12.5px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 20px;
+    }
+
+
+    .service-card {
+        min-height: 430px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 767px) {
+
+    .services-grid {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+
+    .service-card {
+        min-height: 430px;
+
+        border-radius: 18px;
+    }
+
+
+    .service-content {
+        padding: 25px 22px;
+    }
+
+
+    .service-content h3 {
+        font-size: 1.6rem;
+    }
+
+
+    .service-content p {
+        font-size: 12.5px;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 420px) {
+
+    .service-card {
+        min-height: 400px;
+    }
+
+}
